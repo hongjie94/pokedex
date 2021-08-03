@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navbar */
+.navlink {
+  @apply block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white mr-4 pl-1 pt-2;
+}
+
+.herotest {
+  clip-path: polygon(70% 0, 100% 0%, 100% 100%, 30% 100%);
+  background-color: #E34041;
+  background-image: url('../public/img/hero.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+}
+
+.herotest2 {
+  clip-path: polygon(0 0, 70% 0, 30% 100%, 0 100%);
+  background-color: #4D3495;
+  background-color: hsla(0, 79%, 52%, 0.726);
+  height: 100vh;
+}
+
+.bg-black-700 {
+  background: #111827;
+}
+
+.bg-brown-700 {
+  background: #8d5959;
+}
+
+.bg-white-700 {
+  background: #c7c8c8;
+}
