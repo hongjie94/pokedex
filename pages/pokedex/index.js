@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import Head from 'next/head';
 import Pagination from '../../components/Pokedex/Pagination';
-import Dropdown from '../../components/Pokedex/Dropdown';
 import Link from 'next/link';
 import PokemonTypes from '../../components/PokemonTypes.json';
 
@@ -17,6 +16,7 @@ const Pokedex = ({pokemons}) => {
 
   const [PageStart, setPageStart] = useState(0);
   const [PageEnd, setPageEnd] = useState(20);
+  const [PageNum, setPageNum] = useState(1);
 
   const ImgUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'
 
@@ -38,17 +38,18 @@ const Pokedex = ({pokemons}) => {
         <title>Pokedex | List</title>
       </Head>
 
+      <h1 className="text-xl-7">Pokémon Pokédex</h1>
+
       {/* .slice(PageStart, PageEnd) */}
       <div className="card_grid ">
         {
           pokemons.slice(PageStart, PageEnd).map((pokemon, index)=>(
-            <Link href={`/pokedex/${(Number(index) + 1)}`} key={pokemon.name}>
+            <Link href={`/pokedex/${pokemon.id}`} key={pokemon.name}>
               <a>
                 <div className={`${ pokemon.type[1] ? pokemon.type[1] : pokemon.type[0]}  xl:w-40 pokemonCard min-w-mincard max-w-pokedexCard`}>
-                  <img className='w-full h-full' src={`${ImgUrl}${Number(index) + 1}.png`} alt={pokemon.name}/>
-                  <p className='pokemonCard_ID'>#{ (Number(index) + 1).pad(3)}</p>
+                  <img className='w-full h-full' src={`${ImgUrl}${pokemon.id}.png`} alt={pokemon.name}/>
+                  <p className='pokemonCard_ID'>#{ (pokemon.id).pad(3)}</p>
                   <p className='pokemonCard_Name '>{pokemon.name}</p>
-                  
                   { pokemon.type[1] ?
                     <p className='pokemonCard_Type'>Type:{pokemon.type[1]},{pokemon.type[0]}</p>
                       :
@@ -60,13 +61,14 @@ const Pokedex = ({pokemons}) => {
           ))
         }
       </div>
-      {/* <Dropdown/> */}
       <Pagination
-        Total= {pokemons.length}
+        TotalCardNum= {pokemons.length}
         PageEnd={PageEnd}
         PageStart={PageStart}
         setPageEnd={setPageEnd}
         setPageStart= {setPageStart}
+        PageNum={PageNum}
+        setPageNum={setPageNum}
       />
     </>
   )
@@ -92,12 +94,13 @@ export const getStaticProps = async ()=> {
     });
   });
 
-  // Remove Deplicate
-  const result = Array.from(new Set(pokemons.map(s => s.name)))
-    .map(pokeName => {
+  // Remove Deplicate  url: pokemon.url,
+  const result = Array.from(new Set(pokemons.map(p => p.name)))
+    .map((pokeName, index) => {
       return {
         name: pokeName,
-        type: pokemons.filter(s => s.name === pokeName).map(type => type.type)
+        id: (index + 1),
+        type: pokemons.filter(p => p.name === pokeName).map(p => p.type)
       }
     });
 

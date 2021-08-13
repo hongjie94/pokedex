@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Requirements from './Requirements';
+import Requirements from './EvolutionRequirements';
 
 const EvolutionTwo = ({SlectedType, ImgUrl, evolution_chain}) => {
 

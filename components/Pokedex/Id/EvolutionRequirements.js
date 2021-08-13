@@ -1,5 +1,5 @@
 
-const Requirements = (DetailDatas) => {
+const EvolutionRequirements = (DetailDatas) => {
   
   let levelupRequirments = [];
    
@@ -65,4 +65,4 @@ const Requirements = (DetailDatas) => {
  
 }
 
-export default Requirements;
+export default EvolutionRequirements;

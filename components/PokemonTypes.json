@@ -1533,15 +1533,15 @@
       "name": "coalossal-gmax"
     },
     {
-      "type": "grass",
+      "type": "poison",
       "name": "bulbasaur"
     },
     {
-      "type": "grass",
+      "type": "poison",
       "name": "ivysaur"
     },
     {
-      "type": "grass",
+      "type": "poison",
       "name": "venusaur"
     },
     {
@@ -2549,15 +2549,15 @@
       "name": "snorlax-gmax"
     },
     {
-      "type": "poison",
+      "type": "grass",
       "name": "bulbasaur"
     },
     {
-      "type": "poison",
+      "type": "grass",
       "name": "ivysaur"
     },
     {
-      "type": "poison",
+      "type": "grass",
       "name": "venusaur"
     },
     {

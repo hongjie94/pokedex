@@ -39,6 +39,10 @@ module.exports = {
       },
       minWidth: {
         mincard: '9em',
+      },
+      screens: {
+        'below-500': {'max': '500px'},
+        'below-370': {'max': '370px'}
       }
     },
   },

@@ -208,31 +208,30 @@ const Details = ({pokemon, species, evolution_chain, flavor_text}) => {
         </div> 
 
         {/*  Evolution Chain  */}   
-        <div className='flex px-5 text-gray-100'>
+        <div className='flex justify-center px-5 text-gray-100'>
         { evolution_chain[0].chain.evolves_to[0] &&     
           <section className='evolutionChain'> 
-            <div className={`flex p-5 m-5 mb-5 l rounded-md`}>
-            
-            {/* Evolution 1 */}
-            <EvolutionOne 
-              SlectedType={SlectedType}
-              ImgUrl={ImgUrl}
-              evolution_chain={evolution_chain}
-            />
+            <div className='flex p-5 m-5 mb-5 l rounded-md'>
+              {/* Evolution 1 */}
+              <EvolutionOne 
+                SlectedType={SlectedType}
+                ImgUrl={ImgUrl}
+                evolution_chain={evolution_chain}
+              />
 
-            {/* Evolution 2 */}
-            <EvolutionTwo
-              SlectedType={SlectedType}
-              ImgUrl={ImgUrl}
-              evolution_chain={evolution_chain}
-            />  
-              
-            {/* Evolution 3 */}  
-            <EvolutionThree 
-              SlectedType={SlectedType}
-              ImgUrl={ImgUrl}
-              evolution_chain={evolution_chain}
-            />
+              {/* Evolution 2 */}
+              <EvolutionTwo
+                SlectedType={SlectedType}
+                ImgUrl={ImgUrl}
+                evolution_chain={evolution_chain}
+              />  
+                
+              {/* Evolution 3 */}  
+              <EvolutionThree 
+                SlectedType={SlectedType}
+                ImgUrl={ImgUrl}
+                evolution_chain={evolution_chain}
+              />
             </div>
           </section>
         }

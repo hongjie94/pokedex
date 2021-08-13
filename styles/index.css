@@ -170,7 +170,7 @@
   /* Pagination */
 
   .Pagination_wrap {
-    @apply bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6;
+    @apply bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 font-Roboto;
   }
 
   .Pagination {
@@ -178,18 +178,20 @@
   }
 
   .PaginationPages {
-    @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
   }
-
-  .PaginationPageActive {
-    @apply z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
-  }
-
   .PaginationPages_md_hidden {
     @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium;
   }
   .PaginationPages_dots{
-    @apply relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700;
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700;
+  }
+  .PaginationPageActive {
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+  }
+
+  .xsScreenPageNum {
+    @apply relative below-370:inline-flex hidden items-center px-4 py-2 border border-gray-300 bg-white text-sm text-gray-700;
   }
 
   .PaginationBtn {

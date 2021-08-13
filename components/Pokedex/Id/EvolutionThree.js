@@ -7,9 +7,13 @@ const EvolutionThree = ({SlectedType, ImgUrl, evolution_chain}) => {
       return (evolution_chain[0].chain.evolves_to[0].evolves_to[0].species);
     }
   }
+
+  const EvolutioEevolves = (evolution_chain[0].chain.evolves_to);
+  const EvolutioEevolves3 = (evolution_chain[0].chain.evolves_to[0].evolves_to);
+
   return (
     <>
-       { evolution_chain[0].chain.evolves_to[0].evolves_to.length === 1 &&  evolution_chain[0].chain.evolves_to.length === 1 &&
+       { EvolutioEevolves3.length === 1 &&  EvolutioEevolves.length === 1 &&
            <div className='evolutionCenter flex-col' >
             <div  className={`${SlectedType} p-3 rounded-full mb-5`}>
               <img className='w-32 p-2' src={ImgUrl + (EvolutionSpecies3().url.slice(42, -1)) + '.png'} alt="not-found"/>
@@ -24,7 +28,7 @@ const EvolutionThree = ({SlectedType, ImgUrl, evolution_chain}) => {
           } 
          
           {/* Evolution 3 (evolves to more than 1 types) */}
-          { evolution_chain[0].chain.evolves_to[0].evolves_to.length > 1 &&
+          { EvolutioEevolves3.length > 1 &&
             
             <>
               <div className='evolutionCenter flex-col'>
