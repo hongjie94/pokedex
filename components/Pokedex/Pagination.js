@@ -1,16 +1,17 @@
 
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
-const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart, PageNum, setPageNum}) => {
+const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart, CardsPerPage, setCardsPerPage}) => {
 
-  const cardPerPage = 20;
-  const lastPage = Math.ceil(TotalCardNum / cardPerPage);
+  const lastPage = Math.ceil(TotalCardNum / CardsPerPage);
+  const [PageNum, setPageNum] = useState(1);
 
    useEffect(() => {
-    setPageStart((PageNum * cardPerPage) - cardPerPage);
-    (PageNum * cardPerPage >= TotalCardNum) ? setPageEnd(TotalCardNum): setPageEnd(PageNum * cardPerPage);
-   }, [PageNum]);
+    setPageStart((PageNum * CardsPerPage) - CardsPerPage);
+    (PageNum * CardsPerPage >= TotalCardNum) ? setPageEnd(TotalCardNum): setPageEnd(PageNum * CardsPerPage);
+   }, [PageNum, CardsPerPage]);
    
+
   return (
     <>
     {/* Page details */}
@@ -29,18 +30,19 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
     {/* Pagination */}
     <div className="Pagination_wrap">
       <div className="Pagination">
-
-        {/* Page details */}
-        <div>
-          <p className="text-sm text-gray-700">
-            Showing {PageNum} {lastPage}
-            <span className="font-medium"> {PageStart + 1} </span>
-            to
-            <span className="font-medium"> {PageEnd} </span>
-            of
-            <span className="font-medium"> {TotalCardNum} </span>
-            results
-          </p>
+        {/* Cards per page options */}
+        <div className="relative inline-flex sm:mb-0 mb-2">
+          <p className="text-gray-600 h-10 pr-3 flex items-center">Show: </p>
+          <svg className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fillRule="nonzero"/></svg>
+          <select
+            onChange={((e)=> {setCardsPerPage(e.target.value), setPageNum(Math.ceil(PageEnd/e.target.value))})}
+            className="Dropdown">
+            <option value='20'>20 Cards</option>
+            <option value='40'>40 Cards</option>
+            <option value='60'>60 Cards</option>
+            <option value='80'>80 Cards</option>
+            <option value='100'>100 Cards</option>
+          </select>
         </div>
 
         {/* Page Nav */}
@@ -67,7 +69,7 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
             :
             <a 
               href="#"
-              onClick={()=>{ PageNum <= 3 ? setPageNum(1) : setPageNum( PageNum - 2)}}
+              onClick={()=>{((PageNum <=3) || (PageNum >= (lastPage - 2)))  ? setPageNum(1) : setPageNum( PageNum - 2)}}
               className={ PageNum === 1 ? 'PaginationPageActive' : 'PaginationPages'}>
               <p>{((PageNum <=3) || (PageNum >= (lastPage - 2) )) ? 1 : (PageNum - 2)}</p>
             </a>
@@ -77,7 +79,7 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
           {/* Pre Nav Page 2 */}
           <a 
             href="#" 
-            onClick={()=>{ PageNum <= 3 ? setPageNum(2) : setPageNum(PageNum - 1)}}
+            onClick={()=>{ ((PageNum <=3) || (PageNum >= (lastPage - 2))) ? setPageNum(2) : setPageNum(PageNum - 1)}}
             className={ PageNum === 2 ? 'PaginationPageActive' : 'PaginationPages'}>
             { ((PageNum <=3) || (PageNum >= (lastPage - 2)  )) ? 2 : (PageNum - 1)}
           </a>
@@ -85,7 +87,7 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
           {/* Pre Nav Page 3 */}
           <a 
             href="#" 
-            onClick={(e)=>{ PageNum < 3 ? setPageNum(3) : e.preventDefault()}}
+            onClick={(e)=>{ ((PageNum < 3) || (PageNum > (lastPage - 2))) ? setPageNum(3) : e.preventDefault()}}
             className={ (PageNum >= 3 && !(PageNum >= (lastPage - 2)))  ? 'PaginationPageActive' : 'PaginationPages'}>
             { ((PageNum <=3) || (PageNum >= (lastPage - 2) )) ? 3 : (PageNum)}
           </a>
@@ -126,7 +128,7 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
           {/* Next Page */}
           <a
             href="#"
-            onClick={(e)=>{ PageNum < 45 ? setPageNum(PageNum + 1): e.preventDefault()}} 
+            onClick={(e)=>{ PageNum < lastPage ? setPageNum(PageNum + 1): e.preventDefault()}} 
             className="PaginationBtn rounded-r-md">
             <span className="sr-only">Next</span>
             <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -139,5 +141,4 @@ const Pagination = ({TotalCardNum, PageEnd, PageStart, setPageEnd, setPageStart,
     </>
   )
 }
-
 export default Pagination

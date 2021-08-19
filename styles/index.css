@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
 
   /* -------------------- Navbar ------------------- */
@@ -84,11 +83,11 @@
   /* -------------------- All Pokemon Cards ------------------- */
 
   .card_grid {
-    @apply grid gap-16 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 m-20;
+    @apply grid gap-16 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 m-20 below-500:grid-cols-1;
   }
   .pokemonCard {
-    @apply  p-3 m-auto border rounded-lg shadow-xl font-Roboto transform hover:scale-125 hover:shadow-2xl
-            transition ease-out duration-300 cursor-pointer;
+    @apply  p-3 m-auto border rounded-lg shadow-xl font-Roboto transform hover:scale-125 
+    hover:shadow-2xl transition ease-out duration-300 cursor-pointer;
   }
   .pokemonCard_ID {
     @apply text-center text-black my-1  m-auto shadow-inner max-w-carNum shadow-2xl bg-gray-100 text-sm rounded-full;
@@ -110,9 +109,18 @@
   .pokedex {
     @apply font-Roboto flex justify-items-center justify-center items-center flex-col p-5 m-10;
   }
+  
+  .pokedexArrow_wrap {
+    @apply flex items-center text-gray-200 hover:text-gray-800 cursor-pointer transition ease-out duration-500;
+  }
+
+  .pokedexHeader {
+    @apply text-4xl tracking-tight font-extrabold mt-10 tracking-wide 
+    py-5 sm:text-5xl md:text-6xl font-Rammetto text-white text-center;
+  }
   /* Image section */ 
   .image-section {
-    @apply flex justify-items-center rounded-l-md justify-between items-center flex-col h-DetailHeight my-5;
+    @apply flex justify-items-center rounded-l-md justify-between items-center md:flex-col h-DetailHeight my-5;
   }
 
   .image-wrap {
@@ -120,53 +128,56 @@
   }
 
   .stats {
-    @apply w-full px-10 bg-gray-100 pb-5 pt-2 text-gray-800 rounded-md rounded-t-none rounded-r-none;
+    @apply bg-gray-100 text-gray-800;
   }
 
   /* Details section */ 
-
   .details-section {
-    @apply px-20 py-8 bg-gray-800 rounded-l-none flex justify-items-center justify-between items-center flex-col rounded-md h-DetailHeight;
+    @apply px-24 py-8 bg-gray-800 lg:rounded-l-none flex justify-items-center justify-between 
+    items-center flex-col rounded-md h-DetailHeight;
   }
   .pokemonDetails {
     @apply  bg-gray-100 rounded-md py-8 mb-3 px-10 w-full text-gray-800 shadow-xl shadow-inner;
   }
-
   .detail_Id {
-    @apply font-bold text-xl bg-gray-300 tracking-wide border-transparent border shadow-inner shadow-2xl w-max p-1 px-3 rounded-full;
+    @apply font-bold text-xl bg-gray-300 tracking-wide border-transparent 
+    border shadow-inner shadow-2xl w-max p-1 px-3 rounded-full;
   }
-
   .detail_Name {
     @apply capitalize font-bold mr-5 text-3xl tracking-wide;
   }
-
   .colorTogglerDot {
     @apply dot absolute left-1 top-1 fire w-6 h-6 rounded-full transition;
   }
-
   .detailType {
     @apply border-transparent border text-sm text-white shadow-md shadow-inner p-1 px-3 mx-1 rounded-md;
   }
-
   .entries {
-    @apply px-10 py-5 w-full rounded-md max-w-lg text-gray-900 bg-gray-100 shadow-xl shadow-inner;
+    @apply px-10 w-full rounded-md max-w-lg text-gray-900 bg-gray-100 shadow-xl shadow-inner;
   }
 
+  /* Evolution section */
   .evolutionChain {
-    @apply bg-gray-800 flex justify-center items-center w-full rounded-md;
+    @apply bg-gray-800 flex justify-center items-center w-full rounded-md flex-col;
   }
   .evolutionCenter {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center text-gray-300 m-3;
   }
-
   .evolution_Name {
     @apply cursor-pointer capitalize text-white text-sm tracking-wider px-2 py-1  hover:text-gray-400;
   }
-
   .evolution_Details {
     @apply text-xs w-32 text-center my-2 capitalize;
   }
+  .evolution_requirments {
+    @apply p-2 lg:flex-col flex-col-reverse h-auto; 
+  }
+  
+  .evolutionArrow {
+    @apply w-8 h-8 transform lg:rotate-0 rotate-90;
+  }
 
+  
   /* Pagination */
 
   .Pagination_wrap {
@@ -178,24 +189,34 @@
   }
 
   .PaginationPages {
-    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 bg-white 
+    border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
   }
   .PaginationPages_md_hidden {
-    @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium;
+    @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex 
+    relative items-center px-4 py-2 border text-sm font-medium;
   }
   .PaginationPages_dots{
-    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700;
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 relative inline-flex 
+    items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700;
   }
   .PaginationPageActive {
-    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+    @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 z-10 bg-indigo-50 
+    border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
   }
 
+  .Dropdown {
+    @apply border border-gray-300 rounded-md text-gray-600 h-10 pl-5 pr-10 
+    bg-white hover:border-gray-400 focus:outline-none appearance-none;
+  }
   .xsScreenPageNum {
-    @apply relative below-370:inline-flex hidden items-center px-4 py-2 border border-gray-300 bg-white text-sm text-gray-700;
+    @apply relative below-370:inline-flex hidden items-center px-4 py-2 
+    border border-gray-300 bg-white text-sm text-gray-700;
   }
 
   .PaginationBtn {
-    @apply relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50;
+    @apply relative inline-flex items-center px-2 py-2 border 
+    border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50;
   }
 
 }
@@ -227,6 +248,7 @@
 .bg-dragon_type { background: radial-gradient(#4338CA, black)}
 
 
+
 input:checked ~ .dot {
   transform: translateX(100%);
 }
@@ -234,9 +256,4 @@ input:checked ~ .dot {
 body {
   background: #1F2937;
 }
-
-/* .fairy {
-  background: radial-gradient(#fff470, #000000)
-  box-shadow: 5px 5px 75px #fde047;
-}  */
 

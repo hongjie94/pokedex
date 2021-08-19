@@ -13,35 +13,21 @@ const Pokedex = ({pokemons}) => {
     while (s.length < (size || 2)) {s = "0" + s;}
     return s;
   };
-
+  const [CardsPerPage, setCardsPerPage] = useState(20);
   const [PageStart, setPageStart] = useState(0);
-  const [PageEnd, setPageEnd] = useState(20);
-  const [PageNum, setPageNum] = useState(1);
+  const [PageEnd, setPageEnd] = useState(CardsPerPage);
 
   const ImgUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'
 
-  // G1 1-151
-  // G2 152-251
-  // G3 152-386
-  // G4 387-493
-  // G5 494-649
-  // G6 650-721
-  // G7 722-809
-  // G8 810-898
-
-
   return (
     <> 
-      {/*  For search
-      https://pokeapi.co/api/v2/pokemon/bulbasaur/ */}
       <Head>
         <title>Pokedex | List</title>
       </Head>
 
-      <h1 className="text-xl-7">Pokémon Pokédex</h1>
+      <h1 className="pokedexHeader">Pokémon Pokédex</h1>
 
-      {/* .slice(PageStart, PageEnd) */}
-      <div className="card_grid ">
+      <div className="card_grid">
         {
           pokemons.slice(PageStart, PageEnd).map((pokemon, index)=>(
             <Link href={`/pokedex/${pokemon.id}`} key={pokemon.name}>
@@ -67,8 +53,8 @@ const Pokedex = ({pokemons}) => {
         PageStart={PageStart}
         setPageEnd={setPageEnd}
         setPageStart= {setPageStart}
-        PageNum={PageNum}
-        setPageNum={setPageNum}
+        CardsPerPage={CardsPerPage}
+        setCardsPerPage={setCardsPerPage}
       />
     </>
   )
@@ -94,7 +80,7 @@ export const getStaticProps = async ()=> {
     });
   });
 
-  // Remove Deplicate  url: pokemon.url,
+  // Remove Deplicate 
   const result = Array.from(new Set(pokemons.map(p => p.name)))
     .map((pokeName, index) => {
       return {
