@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navmain">
       {/* Logo */}
       <div className="logo">
-        <Image src="/img/ball.png" width={30} height={35}/>
+        <Image src="/img/ball.png" width={30} height={35} alt='logo'/>
         <span className="logoSpan">Pokédex</span>
       </div>
 
