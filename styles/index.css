@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;700&display=swap');
 
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-/* 
-@layer components { */
 
   /* -------------------- Navbar ------------------- */
   /* Nav main div */
@@ -219,7 +217,7 @@
     border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50;
   }
 
-/* } */
+@tailwind utilities;
 
 
 .fire {background: radial-gradient(#edca45, #e65533)}
