@@ -219,30 +219,98 @@
   }
 }
 
-.fire {background: radial-gradient(#edca45, #e65533)}
-.water {background: radial-gradient(#2563EB, #1E3A8A)}
-.grass {background: radial-gradient(#34D399, #065F46)}
-.electric {background: radial-gradient(#FEF3C7, #FBBF24)}
-.ice {background: radial-gradient(#DBEAFE, #60A5FA)}
-.dark {background: radial-gradient(#1F2937, #000000)}
-.fighting {background: radial-gradient(#EF4444, #7F1D1D)}
-.flying { background: radial-gradient(#f3f7f5, #818CF8)}
-.poison {background: radial-gradient(#1F2937, #5B21B6)}
-.ground {background: radial-gradient(#D97706, #92411e)}
-.rock {background: radial-gradient(#9CA3AF, #4B5563)}
-.bug {background: radial-gradient(#111827, #064E3B)}
-.steel {background: radial-gradient(#4B5563, #1F2937)}
-.normal { background: radial-gradient( #c7c8c8, #9CA3AF)}
-.unknown {background: radial-gradient( #c7c8c8, #9CA3AF)}
-.psychic { background: radial-gradient(#F9A8D4, #DB2777)}
-.shadow {background: radial-gradient(#ffffff, #000000)}
-.ghost {background: radial-gradient(#808080, #000000)}
-.dragon { background: radial-gradient(#4338CA, black)}
-.fairy {background: radial-gradient(#FBCFE8, #F87171)}
+.fire {
+  background: radial-gradient(#edca45, #e65533);
+}
 
-.bg-shadow_type {background: radial-gradient(#ffffff, #000000)}
-.bg-ghost_type {background: radial-gradient(#808080, #000000)}
-.bg-dragon_type { background: radial-gradient(#4338CA, black)}
+.water {
+  background: radial-gradient(#2563EB, #1E3A8A);
+}
+
+.grass {
+  background: radial-gradient(#34D399, #065F46);
+}
+
+.electric {
+  background: radial-gradient(#FEF3C7, #FBBF24);
+}
+
+.ice {
+  background: radial-gradient(#DBEAFE, #60A5FA);
+}
+
+.dark {
+  background: radial-gradient(#1F2937, #000000);
+}
+
+.fighting {
+  background: radial-gradient(#EF4444, #7F1D1D);
+}
+
+.flying { 
+  background: radial-gradient(#f3f7f5, #818CF8);
+}
+
+.poison {
+  background: radial-gradient(#1F2937, #5B21B6);
+}
+
+.ground {
+  background: radial-gradient(#D97706, #92411e);
+}
+
+.rock {
+  background: radial-gradient(#9CA3AF, #4B5563);
+}
+
+.bug {
+  background: radial-gradient(#111827, #064E3B);
+}
+
+.steel {
+  background: radial-gradient(#4B5563, #1F2937);
+}
+
+.normal { 
+  background: radial-gradient( #c7c8c8, #9CA3AF);
+}
+
+.unknown {
+  background: radial-gradient( #c7c8c8, #9CA3AF);
+}
+
+.psychic { 
+  background: radial-gradient(#F9A8D4, #DB2777);
+}
+
+.shadow {
+  background: radial-gradient(#ffffff, #000000);
+}
+
+.ghost {
+  background: radial-gradient(#808080, #000000);
+}
+
+.dragon { 
+  background: radial-gradient(#4338CA, black);
+}
+
+.fairy {
+  background: radial-gradient(#FBCFE8, #F87171);
+}
+
+.bg-shadow_type {
+  background: radial-gradient(#ffffff, #000000);
+}
+
+.bg-ghost_type {
+  background: radial-gradient(#808080, #000000);
+}
+
+.bg-dragon_type { 
+  background: radial-gradient(#4338CA, black);
+}
+
 
 
 
