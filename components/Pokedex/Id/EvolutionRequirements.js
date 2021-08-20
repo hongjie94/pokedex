@@ -62,7 +62,7 @@ const EvolutionRequirements = (DetailDatas) => {
 
     if (DetailDatas.time_of_day) {
       levelupRequirments.push(
-        <p className="evolution_Details -mt-2" key={DetailDatas.time_of_day}>
+        <p className="evolution_Details -my-2" key={DetailDatas.time_of_day}>
           {DetailDatas.time_of_day}time
         </p>
       )

@@ -34,6 +34,7 @@ const EvolutionTwo = ({SlectedType, ImgUrl, evolution_chain}) => {
       {evolution_chain[0].chain.evolves_to[0].evolves_to.length === 1 &&  evolution_chain[0].chain.evolves_to.length === 1  &&
         <div className='lg:mx-8 evolutionCenter'>
           <div className='evolutionCenter evolution_requirments'>
+          
           <svg  className="evolutionArrow" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" /><path fillRule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
           {/* Require Level-up */}
           { EvolutionDetails2().trigger.name === 'level-up' &&
@@ -69,12 +70,10 @@ const EvolutionTwo = ({SlectedType, ImgUrl, evolution_chain}) => {
               <div className='evolutionCenter my-5' key={`Ev2_${index}`}>
                 <div className='evolutionCenter evolution_requirments'>
                   <svg className="evolutionArrow" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" /><path fillRule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                
                   { datas.evolution_details[0].trigger.name === 'level-up' &&
                     <p className="evolution_Details">Level {datas.evolution_details[0].min_level}</p>
                   }
                 </div>
-                
                 {/* Species Image and Name */}
                 <div className='evolutionCenter flex-col'>
                   <div className={`${SlectedType} p-3 rounded-full mb-5 lg:w-auto w-28`}>  
