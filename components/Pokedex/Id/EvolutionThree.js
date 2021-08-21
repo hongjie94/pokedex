@@ -19,7 +19,7 @@ const EvolutionThree = ({SlectedType, ImgUrl, evolution_chain}) => {
               <img className='w-32 p-2' src={ImgUrl + (EvolutionSpecies3().url.slice(42, -1)) + '.png'} alt="not-found"/>
             </div>
             <p className='text-sm tracking-wide'>#{('00'+EvolutionSpecies3().url.slice(42, -1)).slice(-3)}</p>
-            <Link href={'/pokedex/'+(EvolutionSpecies3().url.slice(42, -1))}>
+            <Link href={'/pokemons/'+(EvolutionSpecies3().url.slice(42, -1))}>
               <a>
                 <p className='evolution_Name'>{EvolutionSpecies3().name}</p>
               </a>
@@ -64,7 +64,7 @@ const EvolutionThree = ({SlectedType, ImgUrl, evolution_chain}) => {
                         <img className='w-32 p-2' src={ImgUrl + (evolution.species.url.slice(42, -1)) + '.png'} alt="not-found"/>
                       </div>
                       <p className='text-sm tracking-wide'>#{('00'+evolution.species.url.slice(42, -1)).slice(-3)}</p>
-                      <Link href={'/pokedex/'+(evolution.species.url.slice(42, -1))}>
+                      <Link href={'/pokemons/'+(evolution.species.url.slice(42, -1))}>
                         <a>
                           <p className='evolution_Name'>{evolution.species.name}</p>
                         </a>

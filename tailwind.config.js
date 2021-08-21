@@ -14,7 +14,8 @@ module.exports = {
       height: {
         DetailHeight: '38em',
         '40em': '40em',
-        '40vh':'40vh'
+        '40vh':'40vh',
+        '60vh':'60vh'
       },
       width: {
         '26rem': '26rem',

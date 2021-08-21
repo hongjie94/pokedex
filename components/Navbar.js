@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="lg:flex-grow lg:text-center">
           <Link href="/"><a className="navlink" >Home</a></Link>
           <Link href="/about"><a className="navlink lg:px-20" >About</a></Link>
-          <Link href="/pokedex"><a className="navlink" >Pokémons</a></Link>
+          <Link href="/pokemons"><a className="navlink" >Pokémons</a></Link>
         </div>
       </div>
     </nav>

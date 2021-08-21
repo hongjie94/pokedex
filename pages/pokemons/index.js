@@ -30,7 +30,7 @@ const Pokedex = ({pokemons}) => {
       <div className="card_grid">
         {
           pokemons.slice(PageStart, PageEnd).map((pokemon, index)=>(
-            <Link href={`/pokedex/${pokemon.id}`} key={pokemon.name}>
+            <Link href={`/pokemons/${pokemon.id}`} key={pokemon.name}>
               <a>
                 <div className={`${ pokemon.type[1] ? pokemon.type[1] : pokemon.type[0]}  xl:w-40 pokemonCard min-w-mincard max-w-pokedexCard`}>
                   <img className='w-full h-full' src={`${ImgUrl}${pokemon.id}.png`} alt={pokemon.name}/>

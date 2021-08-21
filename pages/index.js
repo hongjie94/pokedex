@@ -86,7 +86,7 @@ const Home = ({Allpokemons}) => {
                 { 
                   randomPokemons.map((pokemons)=>(
                     pokemons.map((pokemon)=>(
-                     <Link  href={`/pokedex/${pokemon.id}`} key={pokemon.id} >
+                     <Link  href={`/pokemons/${pokemon.id}`} key={pokemon.id} >
                       <a>
                       <div 
                         className={`${pokemon.type[0]} pokemonCard max-w-maxcard`}>
@@ -116,7 +116,7 @@ const Home = ({Allpokemons}) => {
                 </h1>
                 <div className="heroBtnWrap">
                   <div className="rounded-full">
-                  <Link href='/pokedex'>
+                  <Link href='/pokemons'>
                     <a className="heroBtn">
                     See Pokémon List
                     </a>

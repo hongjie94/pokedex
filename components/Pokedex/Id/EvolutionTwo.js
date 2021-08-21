@@ -22,7 +22,7 @@ const EvolutionTwo = ({SlectedType, ImgUrl, evolution_chain}) => {
             <img className='w-32 p-2' src={ImgUrl + (EvolutionSpecies2.url.slice(42, -1)) + '.png'} alt="EvolutionSpecies2"/>
           </div>
           <p className='text-sm tracking-wide'>#{('00'+EvolutionSpecies2.url.slice(42, -1)).slice(-3)}</p>
-          <Link href={'/pokedex/'+EvolutionSpecies2.url.slice(42, -1)}>
+          <Link href={'/pokemons/'+EvolutionSpecies2.url.slice(42, -1)}>
             <a>
               <p className='evolution_Name'>{EvolutionSpecies2.name}</p>
             </a>
@@ -80,7 +80,7 @@ const EvolutionTwo = ({SlectedType, ImgUrl, evolution_chain}) => {
                     <img className='w-32 p-2' src={ImgUrl + (datas.evolves_to[0].species.url.slice(42, -1)) + '.png'} alt="not-found"/>
                   </div>
                   <p className='text-sm tracking-wide'>#{('00'+datas.evolves_to[0].species.url.slice(42, -1)).slice(-3)}</p>
-                  <Link href={'/pokedex/'+ datas.evolves_to[0].species.url.slice(42, -1)}>
+                  <Link href={'/pokemons/'+ datas.evolves_to[0].species.url.slice(42, -1)}>
                     <a>
                       <p className='evolution_Name'>{datas.evolves_to[0].species.name}</p>
                     </a>

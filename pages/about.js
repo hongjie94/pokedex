@@ -6,19 +6,40 @@ const about = () => {
     <Head>
       <title>Pokedex | About</title>
     </Head>
-    <div className='min-h-screen relative overflow-hidden flex justify-center items-center'>
+    <div className='about'>
       <img 
-        className='absolute opacity-50 md:max-w-2xl sm:max-w-xl md:object-contain object-cover object-center' 
-        src="/img/house.png" 
-        alt="dsdas"
+        className='aboutBgImage' 
+        src="/img/house.png"
+        alt="pokeHouse"
       />
-    <div className="p-5 absolute bg-blue-200 bg-opacity-75 max-w-lg rounded-2xl">
-      <h1>About</h1>
-      <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-        similique earum vel vero quia reiciendis dicta, eaque cum ipsa temporibus sit 
-      mollitia sed, natus quos asperiores cupiditate officiis molestias atque.</p>
-    </div>
-      
+      <div className="aboutContents">
+        <h1 className='text-3xl p-2' >About</h1> 
+        {/* source from https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9dex */}
+        <p className='p-2'>The 
+          <a 
+            target="_blank" 
+            rel='noreferrer' 
+            href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9dex"
+            className='text-red-500 hover:text-blue-500 cursor-pointer' 
+          > Pokédex </a> 
+          is a handheld electronic encyclopedia device, one which 
+          is capable of recording and retaining information of the various Pokémon of the world.
+          <br/>
+          <div className='p-2 w-full text-right mt-5'>
+            <p>
+              Sources of Datas from 
+              <a 
+                href="https://pokeapi.co/"  
+                target="_blank" 
+                rel='noreferrer' 
+                className='text-red-500 hover:text-blue-500 cursor-pointer'
+              > 
+                PokeApi
+              </a>.
+            </p>
+          </div>
+        </p>
+      </div>
     </div>
   </>
   )
