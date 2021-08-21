@@ -37,8 +37,8 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
         <title>Pokédex | {pokemon.name.toUpperCase()}</title>
       </Head>
       {/*  Pokedex  */}
-      <div className='pokedex below-750:mx-0'>
-        <div className=''>
+      <div className='pokedex below-750:mx-0 below-500:p-0'>
+        <div className='max-w-screen-2xl'>
           <div className={pokemon.id === 1 ? 'flex justify-between w-full p-8 below-750:justify-end' :'flex justify-between w-full p-8'}>
             {/*  Previous Pokemon  */}
             <div className={pokemon.id === 1 ? 'hidden' : 'pokedexArrow_wrap w-48'}>
@@ -52,7 +52,7 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
             </div>
 
           {/*  Current Pokemon  */}
-          <div className={`bg-${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur below-750:hidden`}>
+          <div className={`${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur below-750:hidden`}>
             <div className='p-2 px-3 rounded-md truncate'>
               <span>#{('00' + (pokemon.id)).slice(-3)}</span>
               <span className='px-2'>{pokemon.name.toUpperCase()}</span>
@@ -73,7 +73,8 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
 
           <div className='below-750:flex hidden justify-center w-full`'>
           {/*  Current Pokemon show below 750px  */}
-          <div className={`bg-${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur`}>
+          <div className={`${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur
+          `}>
             <div className='p-2 px-3 rounded-md truncate'>
               <span>#{('00' + (pokemon.id)).slice(-3)}</span>
               <span className='px-2'>{pokemon.name.toUpperCase()}</span>
@@ -86,17 +87,16 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
            {/*  Image & Stats section */}
           <section className={`${SlectedType} 
             flex justify-items-center rounded-l-md lg:w-auto justify-between items-center lg:flex-col lg:h-DetailHeight my-5 w-full lg:rounded-r-none rounded-r-md 
-            
-            below-750:flex-col below-750:w-26rem`}>
+            below-750:flex-col below-750:w-26rem below-500:w-23rem`}>
 
             {/*  Image */}
-            <div className={`bg-transparent image-wrap lg:h-full lg:w-full h-72 flex justify-center items-center w-2/5 lg:p-10 pr-0 pl-10 below-750:p-0 below-750:w-full`}>
+            <div className={`bg-transparent image-wrap lg:h-full lg:w-full lg:pb-0 h-72 flex justify-center items-center w-2/5 lg:p-10 pr-0 pl-10 below-750:p-0 below-750:w-26rem`}>
               <img className="w-72 lg:p-0" src={`${ImgUrl}${pokemon.id}.png`} alt={pokemon.name} />
             </div>
 
             {/*  Stats  */}
-            <div className={`bg-transparent stats lg:pb-5 lg:pt-2 lg:px-10 lg:h-full lg:w-full h-72 w-auto lg:block flex lg:justify-center items-center w-3/5
-           lg:pl-10 pl-11 justify-start below-750:pl-0 below-750:justify-center below-750:w-80
+            <div className={`bg-transparent stats lg:pb-7 lg:pt-2 lg:px-10 lg:h-full lg:w-full h-72 w-auto flex lg:justify-center lg:items-end items-center w-3/5
+              pl-11 justify-start below-750:pl-0 below-750:justify-center below-750:w-80
             ` }>
               <div className='bg-gray-100 lg:p-5 lg:w-full rounded-md px-10 py-5 min-w-statsCard shadow-inner below-750:w-full'> 
               <h1 className='font-bold text-xl mb-2'>Base Stats</h1>
@@ -115,7 +115,7 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
           <section className="details-section w-full below-750:w-26rem below-750:h-full below-750:p-8">
 
             {/*  Pokemon Details  */}
-            <div className='pokemonDetails lg:w-full lg:min-w-minWDetails w-32rem shadow-inner below-750:w-80'>
+            <div className='pokemonDetails lg:w-full lg:min-w-minWDetails max-w-lg w-32rem shadow-inner below-750:w-80'>
 
               {/* Pokemon Id */}
               <p className='detail_Id'> #{('00' + pokemon.id).slice(-3)}</p>
@@ -140,11 +140,11 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
               {/* Pokemon Type */}  
               <div className='my-3'>
                 <span className='font-medium'>Type: </span> 
-                <span className={`bg-${pokemon.types[0].type.name}_type detailType`}>
+                <span className={`${pokemon.types[0].type.name}_type detailType`}>
                   {pokemon.types[0].type.name.toUpperCase()}
                 </span> 
                 { pokemon.types.length > 1 && 
-                  <span className={`bg-${pokemon.types[1].type.name}_type detailType`}>
+                  <span className={`${pokemon.types[1].type.name}_type detailType`}>
                     {pokemon.types[1].type.name.toUpperCase()}
                   </span>
                 }
@@ -206,7 +206,7 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
         {/*  Evolution Chain  */}   
         <div className='flex justify-center px-5 text-gray-100'>
         { evolution_chain[0].chain.evolves_to[0] &&
-          <section className='evolutionChain'> 
+          <section className='evolutionChain below-750:w-26rem'> 
             <span className='font-bold text-xl mt-10 bg-gray-100 text-gray-800 rounded-md p-4'>Evolution Chain</span>
             <div className='flex p-5 m-5 rounded-md lg:flex-row flex-col below-750:p-0'>
               {/* Evolution 1 */}

@@ -47,7 +47,7 @@
     @apply relative z-10 pb-8 bg-indigo-600 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32;
   }
   .hero_pokemonCard_wrap {
-    @apply md:block lg:relative pt-6 px-2 hidden lg:px-8 w-screen;
+    @apply md:block lg:relative pt-6 px-2 hidden lg:px-8 w-screen max-w-screen-2xl;
   }
   .hero_pokemonCards {
     @apply grid gap-10 lg:grid-cols-6 md:grid-cols-3 my-10 xl:mr-40;
@@ -219,99 +219,47 @@
   }
 }
 
-.fire {
-  background: radial-gradient(#edca45, #e65533);
-}
+.fire {background: radial-gradient(#edca45, #e65533)}
+.water {background: radial-gradient(#2563EB, #1E3A8A)}
+.grass {background: radial-gradient(#34D399, #065F46)}
+.electric {background: radial-gradient(#FEF3C7, #FBBF24)}
+.ice {background: radial-gradient(#DBEAFE, #60A5FA)}
+.dark {background: radial-gradient(#1F2937, #000000)}
+.fighting {background: radial-gradient(#EF4444, #7F1D1D)}
+.flying { background: radial-gradient(#f3f7f5, #818CF8)}
+.poison {background: radial-gradient(#1F2937, #5B21B6)}
+.ground {background: radial-gradient(#D97706, #92411e)}
+.rock {background: radial-gradient(#9CA3AF, #4B5563)}
+.bug {background: radial-gradient(#111827, #064E3B)}
+.steel {background: radial-gradient(#4B5563, #1F2937)}
+.normal { background: radial-gradient( #c7c8c8, #9CA3AF)}
+.unknown {background: radial-gradient( #c7c8c8, #9CA3AF)}
+.psychic { background: radial-gradient(#F9A8D4, #DB2777)}
+.shadow {background: radial-gradient(#ffffff, #000000)}
+.ghost {background: radial-gradient(#808080, #000000)}
+.dragon {background: radial-gradient(#4338CA, black)}
+.fairy {background: radial-gradient(#FBCFE8, #F87171)}
 
-.water {
-  background: radial-gradient(#2563EB, #1E3A8A);
-}
-
-.grass {
-  background: radial-gradient(#34D399, #065F46);
-}
-
-.electric {
-  background: radial-gradient(#FEF3C7, #FBBF24);
-}
-
-.ice {
-  background: radial-gradient(#DBEAFE, #60A5FA);
-}
-
-.dark {
-  background: radial-gradient(#1F2937, #000000);
-}
-
-.fighting {
-  background: radial-gradient(#EF4444, #7F1D1D);
-}
-
-.flying { 
-  background: radial-gradient(#f3f7f5, #818CF8);
-}
-
-.poison {
-  background: radial-gradient(#1F2937, #5B21B6);
-}
-
-.ground {
-  background: radial-gradient(#D97706, #92411e);
-}
-
-.rock {
-  background: radial-gradient(#9CA3AF, #4B5563);
-}
-
-.bug {
-  background: radial-gradient(#111827, #064E3B);
-}
-
-.steel {
-  background: radial-gradient(#4B5563, #1F2937);
-}
-
-.normal { 
-  background: radial-gradient( #c7c8c8, #9CA3AF);
-}
-
-.unknown {
-  background: radial-gradient( #c7c8c8, #9CA3AF);
-}
-
-.psychic { 
-  background: radial-gradient(#F9A8D4, #DB2777);
-}
-
-.shadow {
-  background: radial-gradient(#ffffff, #000000);
-}
-
-.ghost {
-  background: radial-gradient(#808080, #000000);
-}
-
-.dragon { 
-  background: radial-gradient(#4338CA, black);
-}
-
-.fairy {
-  background: radial-gradient(#FBCFE8, #F87171);
-}
-
-.bg-shadow_type {
-  background: radial-gradient(#ffffff, #000000);
-}
-
-.bg-ghost_type {
-  background: radial-gradient(#808080, #000000);
-}
-
-.bg-dragon_type { 
-  background: radial-gradient(#4338CA, black);
-}
-
-
+.fire_type {background: #e65533}
+.water_type {background: #1E3A8A}
+.grass_type {background: #065F46}
+.electric_type {background: #FBBF24}
+.ice_type{ background: #60A5FA}
+.dark_type {background: #000000}
+.fighting_type{ background:#7F1D1D}
+.flying_type {background: #818CF8}
+.poison_type {background: #5B21B6}
+.ground_type {background: #92411e}
+.rock_type{ background: #4B5563}
+.bug_type {background: #064E3B}
+.steel_type {background: #1F2937}
+.normal_type {background: #9CA3AF}
+.unknown_type {background: #9CA3AF}
+.psychic_type {background: #DB2777}
+.fairy_type {background: #F87171}
+.shadow_type {background: radial-gradient(#ffffff, #000000);}
+.ghost_type {background: radial-gradient(#808080, #000000);}
+.dragon_type { background: radial-gradient(#4338CA, black);}
 
 
 input:checked ~ .dot {
@@ -320,5 +268,11 @@ input:checked ~ .dot {
 
 body {
   background: #1F2937;
+}
+
+@media screen and (max-width: 500px) {
+  .max500 {
+    width: 23rem !important;
+  }
 }
 
