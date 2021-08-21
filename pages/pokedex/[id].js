@@ -39,8 +39,9 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
       {/*  Pokedex  */}
       <div className='pokedex below-750:mx-0 below-500:p-0'>
         <div className='max-w-screen-2xl'>
-          <div className={pokemon.id === 1 ? 'flex justify-between w-full p-8 below-750:justify-end' :'flex justify-between w-full p-8'}>
-            {/*  Previous Pokemon  */}
+          <div className={pokemon.id === 1 ? 'flex justify-between w-full p-8 below-750:justify-end xsNav' :'flex justify-between w-full p-8 xsNav'}>
+           
+           {/*  Previous Pokemon  */}
             <div className={pokemon.id === 1 ? 'hidden' : 'pokedexArrow_wrap w-48'}>
               <Link href={`/pokedex/${(pokemon.id - 1)}`} key={pokemon.name}>
                 <a className='flex items-center truncate'>
@@ -52,7 +53,7 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
             </div>
 
           {/*  Current Pokemon  */}
-          <div className={`${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur below-750:hidden`}>
+          <div className={`${SlectedType}_type pokedexArrowCur`}>
             <div className='p-2 px-3 rounded-md truncate'>
               <span>#{('00' + (pokemon.id)).slice(-3)}</span>
               <span className='px-2'>{pokemon.name.toUpperCase()}</span>
@@ -73,8 +74,7 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
 
           <div className='below-750:flex hidden justify-center w-full`'>
           {/*  Current Pokemon show below 750px  */}
-          <div className={`${SlectedType}_type text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 rounded-md border-transparent max-w-cur
-          `}>
+          <div className={`${SlectedType}_type pokedexArrowCur750`}>
             <div className='p-2 px-3 rounded-md truncate'>
               <span>#{('00' + (pokemon.id)).slice(-3)}</span>
               <span className='px-2'>{pokemon.name.toUpperCase()}</span>
@@ -82,23 +82,19 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
             </div>
           </div>  
 
-          <div className='flex justify-items-center justify-center items-center p-5 lg:flex-row flex-col'>
+          <div className='pokedexContent'>
 
            {/*  Image & Stats section */}
-          <section className={`${SlectedType} 
-            flex justify-items-center rounded-l-md lg:w-auto justify-between items-center lg:flex-col lg:h-DetailHeight my-5 w-full lg:rounded-r-none rounded-r-md 
-            below-750:flex-col below-750:w-26rem below-500:w-23rem`}>
+          <section className={`${SlectedType} image-section xsCardsWrap`}>
 
             {/*  Image */}
-            <div className={`bg-transparent image-wrap lg:h-full lg:w-full lg:pb-0 h-72 flex justify-center items-center w-2/5 lg:p-10 pr-0 pl-10 below-750:p-0 below-750:w-26rem`}>
-              <img className="w-72 lg:p-0" src={`${ImgUrl}${pokemon.id}.png`} alt={pokemon.name} />
+            <div className='image-wrap xsCardsWrap flexEnd'>
+              <img className="w-72 lg:p-0 below-500:w-60 below-500:pt-8" src={`${ImgUrl}${pokemon.id}.png`} alt={pokemon.name} />
             </div>
 
             {/*  Stats  */}
-            <div className={`bg-transparent stats lg:pb-7 lg:pt-2 lg:px-10 lg:h-full lg:w-full h-72 w-auto flex lg:justify-center lg:items-end items-center w-3/5
-              pl-11 justify-start below-750:pl-0 below-750:justify-center below-750:w-80
-            ` }>
-              <div className='bg-gray-100 lg:p-5 lg:w-full rounded-md px-10 py-5 min-w-statsCard shadow-inner below-750:w-full'> 
+            <div className='stats'>
+              <div className='statsDiv xsCards'> 
               <h1 className='font-bold text-xl mb-2'>Base Stats</h1>
               { pokemon.stats.map((data, index)=> (
                 <div key={data.stat.name + index}>
@@ -112,16 +108,16 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
           </section>
 
           {/* Details */} 
-          <section className="details-section w-full below-750:w-26rem below-750:h-full below-750:p-8">
+          <section className="details-section xsCardsWrap">
 
             {/*  Pokemon Details  */}
-            <div className='pokemonDetails lg:w-full lg:min-w-minWDetails max-w-lg w-32rem shadow-inner below-750:w-80'>
+            <div className='pokemonDetails xsCards'>
 
               {/* Pokemon Id */}
               <p className='detail_Id'> #{('00' + pokemon.id).slice(-3)}</p>
             
               {/* Pokemon Name */}  
-              <div className="flex items-center justify-start w-full my-2">
+              <div className="detail_NameWrap">
                 <p className='detail_Name'>{pokemon.name}</p>            
                 { pokemon.types.length > 1 && 
                   <>
@@ -194,21 +190,19 @@ const Details = ({pokemon, species, evolution_chain, flavor_text, NextPokemonNam
             </div>
 
             {/* Pokédex Entries */}      
-            <div className='entries mincardDetails py-7 shadow-inner below-750:w-80 below-750:mt-5'>
+            <div className='entries mincardDetails  xsCards'>
               <h1 className='font-bold text-xl mb-2'>Pokédex Entries</h1>
               <p>{flavor_text[0].flavor_text}</p>
             </div> 
           </section>
         </div> 
-
-        {/*  25rem, 20rem  */}   
        
         {/*  Evolution Chain  */}   
         <div className='flex justify-center px-5 text-gray-100'>
         { evolution_chain[0].chain.evolves_to[0] &&
-          <section className='evolutionChain below-750:w-26rem'> 
-            <span className='font-bold text-xl mt-10 bg-gray-100 text-gray-800 rounded-md p-4'>Evolution Chain</span>
-            <div className='flex p-5 m-5 rounded-md lg:flex-row flex-col below-750:p-0'>
+          <section className='evolutionChain  xsCardsWrap'> 
+            <span className='evolutionChainSpan'>Evolution Chain</span>
+            <div className='evolutionWrap'>
               {/* Evolution 1 */}
               <EvolutionOne 
                 SlectedType={SlectedType}

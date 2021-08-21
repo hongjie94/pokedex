@@ -9,7 +9,8 @@
   /* -------------------- Navbar ------------------- */
   /* Nav main div */
   .navmain {
-    @apply flex items-center justify-between flex-wrap py-4 px-6 shadow-2xl bg-gray-800 font-Roboto;
+    @apply flex items-center justify-between flex-wrap py-4 px-6 
+    shadow-2xl bg-gray-800 font-Roboto;
   }
   /* Nav logo */
   .logo {
@@ -27,7 +28,8 @@
     @apply w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide;
   }
   .navlink {
-    @apply block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white mr-4 pl-1 pt-2 transition ease-out duration-500;
+    @apply block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white 
+    mr-4 pl-1 pt-2 transition ease-out duration-500;
   }
 
   /* -------------------- Home Page------------------- */
@@ -39,12 +41,14 @@
 
   /* Hero Divider */
   .hero_divider {
-    @apply hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2;
+    @apply hidden lg:block absolute right-0 inset-y-0 h-full w-48 
+    text-white transform translate-x-1/2;
   }
 
   /* Hero left side content */
   .heroLeft {
-    @apply relative z-10 pb-8 bg-indigo-600 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32;
+    @apply relative z-10 pb-8 bg-indigo-600 sm:pb-16 md:pb-20 lg:max-w-2xl
+    lg:w-full lg:pb-28 xl:pb-32;
   }
   .hero_pokemonCard_wrap {
     @apply md:block lg:relative pt-6 px-2 hidden lg:px-8 w-screen max-w-screen-2xl;
@@ -65,9 +69,10 @@
     @apply mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start w-full;
   }
   .heroBtn {
-    @apply w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium 
-    rounded-full text-black bg-yellow-300 transform transition ease-out duration-300 shadow-lg hover:shadow-inner 
-    hover:bg-yellow-400 hover:-translate-y-2 md:py-4 md:text-lg md:px-10;
+    @apply w-full flex items-center justify-center px-8 py-3 border border-transparent 
+    text-base font-medium rounded-full text-black bg-yellow-300 transform transition 
+    ease-out duration-300 shadow-lg hover:shadow-inner hover:bg-yellow-400 hover:-translate-y-2
+    md:py-4 md:text-lg md:px-10;
   }
 
   /* Hero Right side content */
@@ -75,21 +80,24 @@
     @apply lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 opacity-90;
   }
   .heroImg {
-    @apply h-56 w-full object-contain object-bottom sm:h-72 md:h-96 lg:w-full lg:pl-36 lg:h-full lg:px-10 bg-red-500;
+    @apply h-56 w-full object-contain object-bottom sm:h-72 md:h-96 lg:w-full 
+    lg:pl-36 lg:h-full lg:px-10 bg-red-500 below-500:h-40vh;
   }
 
 
   /* -------------------- All Pokemon Cards ------------------- */
 
   .card_grid {
-    @apply grid gap-16 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 m-20 below-500:grid-cols-1;
+    @apply grid gap-16 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 
+    grid-cols-2 m-20 below-500:grid-cols-1;
   }
   .pokemonCard {
     @apply  p-3 m-auto border rounded-lg shadow-xl font-Roboto transform hover:scale-125 
     hover:shadow-2xl transition ease-out duration-300 cursor-pointer;
   }
   .pokemonCard_ID {
-    @apply text-center text-black my-1  m-auto shadow-inner max-w-carNum shadow-2xl bg-gray-100 text-sm rounded-full;
+    @apply text-center text-black my-1  m-auto shadow-inner max-w-carNum 
+    shadow-2xl bg-gray-100 text-sm rounded-full;
   } 
   .pokemonCard_Name {
     @apply text-center text-white capitalize truncate;
@@ -110,60 +118,99 @@
   }
   
   .pokedexArrow_wrap {
-    @apply flex items-center text-gray-200 hover:text-gray-800 cursor-pointer transition ease-out duration-500;
+    @apply flex items-center text-gray-200 hover:text-gray-800 cursor-pointer 
+    transition ease-out duration-500;
+  }
+
+  .pokedexArrowCur{
+    @apply text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 
+    rounded-md border-transparent max-w-cur below-750:hidden below-500:py-2 below-500:px-3;
+  }
+  .pokedexArrowCur750{
+    @apply text-gray-100 font-bold tracking-wider shadow-inner bg-opacity-75 py-3 px-4 
+    rounded-md border-transparent max-w-cur;
   }
 
   .pokedexHeader {
     @apply text-4xl tracking-tight font-extrabold mt-10 tracking-wide 
     py-5 sm:text-5xl md:text-6xl font-Rammetto text-white text-center;
   }
+  .pokedexContent {
+    @apply flex justify-items-center justify-center items-center p-5 lg:flex-row flex-col;
+  }
   /* Image section */ 
   .image-section {
-    @apply flex justify-items-center rounded-l-md justify-between items-center md:flex-col h-DetailHeight my-5;
+    @apply flex justify-items-center rounded-l-md lg:w-auto justify-between items-center 
+    lg:flex-col lg:h-DetailHeight my-5 w-full lg:rounded-r-none rounded-r-md 
+    below-750:flex-col below-750:w-26rem;
   }
 
   .image-wrap {
-    @apply rounded-md w-max rounded-b-none rounded-r-none p-8;
+    @apply rounded-md w-max rounded-b-none rounded-r-none p-8  bg-transparent 
+    lg:h-full lg:w-full lg:pb-0 h-72 flex justify-center items-center w-2/5 lg:p-10 
+    pr-0 pl-10 below-750:p-0 below-750:w-26rem below-500:h-60;
   }
 
   .stats {
-    @apply bg-gray-100 text-gray-800;
+    @apply text-gray-800 bg-transparent lg:pb-7 lg:pt-2 lg:px-10 lg:h-full
+    lg:w-full h-72 w-auto flex lg:justify-center lg:items-end items-center w-3/5
+    pl-11 justify-start below-750:pl-0 below-750:justify-center below-750:w-80;
+  }
+  .statsDiv {
+    @apply bg-gray-100 lg:p-5 lg:w-full rounded-md px-10 py-5 min-w-statsCard 
+    shadow-inner below-750:w-full;
   }
 
   /* Details section */ 
   .details-section {
     @apply px-24 py-8 bg-gray-800 lg:rounded-l-none flex justify-items-center justify-between 
-    items-center flex-col rounded-md h-DetailHeight;
+    items-center flex-col rounded-md h-DetailHeight w-full below-750:w-26rem below-750:h-full 
+    below-750:p-8;
   }
   .pokemonDetails {
-    @apply  bg-gray-100 rounded-md py-8 mb-3 px-10 w-full text-gray-800 shadow-xl shadow-inner;
+    @apply  bg-gray-100 rounded-md py-8 mb-3 px-10 w-full text-gray-800 shadow-xl
+    shadow-inner lg:w-full lg:min-w-minWDetails max-w-lg w-32rem shadow-inner below-750:w-80;
   }
   .detail_Id {
     @apply font-bold text-xl bg-gray-300 tracking-wide border-transparent 
     border shadow-inner shadow-2xl w-max p-1 px-3 rounded-full;
   }
+  .detail_NameWrap {
+    @apply flex items-center justify-start w-full my-2;
+  }
   .detail_Name {
-    @apply capitalize font-bold mr-5 text-3xl tracking-wide;
+    @apply capitalize font-bold mr-5 text-3xl tracking-wide below-750:text-2xl 
+    below-500:max-w-pokedexCard truncate;
   }
   .colorTogglerDot {
     @apply dot absolute left-1 top-1 fire w-6 h-6 rounded-full transition;
   }
   .detailType {
-    @apply border-transparent border text-sm text-white shadow-md shadow-inner p-1 px-3 mx-1 rounded-md;
+    @apply border-transparent border text-sm text-white shadow-md shadow-inner 
+    p-1 px-3 mx-1 rounded-md;
   }
   .entries {
-    @apply px-10 w-full rounded-md max-w-lg text-gray-900 bg-gray-100 shadow-xl shadow-inner;
+    @apply px-10 w-full rounded-md max-w-lg text-gray-900 bg-gray-100 shadow-xl 
+    shadow-inner py-7 below-750:w-80 below-750:mt-5;
   }
 
   /* Evolution section */
   .evolutionChain {
-    @apply bg-gray-800 flex justify-center items-center w-full rounded-md flex-col;
+    @apply bg-gray-800 flex justify-center items-center w-full rounded-md 
+    flex-col below-750:w-26rem;
+  }
+  .evolutionChainSpan {
+    @apply font-bold text-xl mt-10 bg-gray-100 text-gray-800 rounded-md p-4;
+  }
+  .evolutionWrap {
+    @apply flex p-5 m-5 rounded-md lg:flex-row flex-col below-750:p-0;
   }
   .evolutionCenter {
     @apply flex justify-center items-center text-gray-300 m-3;
   }
   .evolution_Name {
-    @apply cursor-pointer capitalize text-white text-sm tracking-wider px-2 py-1  hover:text-gray-400;
+    @apply cursor-pointer capitalize text-white text-sm tracking-wider px-2 py-1 
+    hover:text-gray-400;
   }
   .evolution_Details {
     @apply text-xs w-32 text-center my-2 capitalize;
@@ -180,7 +227,8 @@
   /* Pagination */
 
   .Pagination_wrap {
-    @apply bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 font-Roboto;
+    @apply bg-white px-4 py-3 flex items-center justify-between border-t 
+    border-gray-200 sm:px-6 font-Roboto;
   }
 
   .Pagination {
@@ -189,7 +237,8 @@
 
   .PaginationPages {
     @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 bg-white 
-    border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+    border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center 
+    px-4 py-2 border text-sm font-medium;
   }
   .PaginationPages_md_hidden {
     @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex 
@@ -201,7 +250,8 @@
   }
   .PaginationPageActive {
     @apply below-370:hidden below-500:text-xs below-500:px-3 below-500:py-1 z-10 bg-indigo-50 
-    border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium;
+    border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm 
+    font-medium;
   }
 
   .Dropdown {
@@ -270,9 +320,45 @@ body {
   background: #1F2937;
 }
 
-@media screen and (max-width: 500px) {
-  .max500 {
-    width: 23rem !important;
+@media screen and (max-width: 499px) {
+  .xsNav {
+    width: 90% !important;
+    margin: auto !important;
+    padding: 1rem !important;
+    font-size: 13px !important;
+  }
+  .xsCards {
+    width: 18rem !important;
+    padding: 1em !important;
+  }
+  .xsCardsWrap {
+    width: 20rem !important;
+  }
+  .xsCardHeight {
+    height: 15rem;
+  }
+  .flexEnd {
+    align-items: flex-end;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .xsNav {
+    width: 80% !important;
+  }
+  .xsCards {
+    width: 17rem !important;
+    padding: 1em !important;
+  }
+  .xsCardsWrap {
+    width: 19rem !important;
+  }
+  .xsCardHeight {
+    height: 15rem;
+  }
+  .flexEnd {
+    align-items: flex-end;
+  }
+}
+
 

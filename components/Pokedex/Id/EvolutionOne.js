@@ -116,7 +116,7 @@ const EvolutionOne = ({SlectedType, ImgUrl, evolution_chain}) => {
 
             {/* Evolution 1 (evolves to more than 1 types) */}
             { evolution_chain[0].chain.evolves_to.length !== 1 && EvolutionDetails1 &&
-              <div className='flex lg:flex-col lg:w-full flex-row lg:overflow-hidden overflow-x-scroll below-750:w-25rem'>
+              <div className='flex lg:flex-col lg:w-full flex-row lg:overflow-hidden overflow-x-scroll below-750:w-25rem xsCardsWrap'>
               { (evolution_chain[0].chain.evolves_to).map((datas, index) => (
                 <div className='evolutionCenter my-5 lg:flex-row flex-col' key={`Evs1${index}`}>
                   <div className='evolutionCenter evolution_requirments'>
