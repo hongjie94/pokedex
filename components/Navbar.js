@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
+import {useState} from 'react'
 const Navbar = () => {
+
+  const [ShowNav, SetShowNav] = useState(false);
+  
+  const toggleNav = () => {
+    ShowNav ? SetShowNav(false) : SetShowNav(true)
+  };
+
   return (
     <nav className="navmain">
       {/* Logo */}
@@ -12,7 +19,7 @@ const Navbar = () => {
 
       {/* Buger icon */}
       <div className="block lg:hidden">
-        <button className="MobileIcon">
+        <button className="MobileIcon" onClick={()=>toggleNav()}>
           <svg 
             className="fill-current h-5 w-5" 
             viewBox="0 0 20 20" 
@@ -23,7 +30,7 @@ const Navbar = () => {
       </div>
 
       {/* Nav Links */}
-      <div className="navlinks">
+      <div className={ShowNav ? 'navlinks block' : 'navlinks hidden lg:block'}>
         <div className="lg:flex-grow lg:text-center">
           <Link href="/"><a className="navlink" >Home</a></Link>
           <Link href="/about"><a className="navlink lg:px-20" >About</a></Link>

@@ -13,9 +13,9 @@ const about = () => {
         alt="pokeHouse"
       />
       <div className="aboutContents">
-        <h1 className='text-3xl p-2' >About</h1> 
+        <h1 className='text-3xl p-2 font-semibold' >About</h1> 
         {/* source from https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9dex */}
-        <p className='p-2'>The 
+        <div className='p-2'>The 
           <a 
             target="_blank" 
             rel='noreferrer' 
@@ -26,9 +26,7 @@ const about = () => {
           is capable of recording and retaining information of the various Pokémon of the world.
           <br/>
           <div className='p-2 w-full text-right mt-5'>
-            <p>
-              Sources of Datas from 
-              <a 
+            <p>Sources of Datas from <a 
                 href="https://pokeapi.co/"  
                 target="_blank" 
                 rel='noreferrer' 
@@ -38,7 +36,7 @@ const about = () => {
               </a>.
             </p>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   </>

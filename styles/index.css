@@ -25,7 +25,7 @@
   }
   /* Nav links */
   .navlinks {
-    @apply w-full block flex-grow lg:flex lg:items-center lg:w-auto tracking-wide;
+    @apply w-full hidden flex-grow lg:flex lg:items-center lg:w-auto tracking-wide;
   }
   .navlink {
     @apply block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white 
@@ -80,7 +80,7 @@
     @apply lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 opacity-90;
   }
   .heroImg {
-    @apply h-56 w-full object-contain object-bottom sm:h-72 md:h-96 lg:w-full 
+    @apply h-80 w-full object-contain object-bottom sm:h-72 md:h-96 lg:w-full 
     lg:pl-36 lg:h-full lg:px-10 bg-red-500 below-500:h-40vh;
   }
 
@@ -110,7 +110,7 @@
   /* -------------------- About Page ------------------- */
 
   .about {
-    @apply h-60vh relative overflow-hidden flex justify-center items-start font-Roboto m-10 mt-40;
+    @apply h-72vh relative overflow-hidden flex justify-center items-center font-Roboto m-10;
   }
   .aboutBgImage {
     @apply absolute opacity-50 md:max-w-2xl sm:max-w-xl md:object-contain object-cover object-center;
